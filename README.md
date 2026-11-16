@@ -8,7 +8,7 @@ This pipeline identifies publications reporting results that directly compare
 randomized trial groups. It then assesses whether an explicitly identified
 prespecified primary endpoint was successful, using the title and abstract.
 ClinicalTrials.gov registry-history analysis is provided in the
-[companion repository](https://github.com/p-ayurzana/clinicaltrials-api-history).
+[companion repository](https://github.com/p-ayurzana/clinicaltrials_registry_pipeline/tree/main).
 
 ## Data
 
