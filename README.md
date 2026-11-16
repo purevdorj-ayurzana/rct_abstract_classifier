@@ -16,8 +16,8 @@ The New England Journal of Medicine. The original PubMed downloads and the
 processed abstracts are included in [data](data/README.md).
 
 The [results](results) contain all RCT classifications, **2,178 primary-endpoint
-assessments**, and the publication–registry links used for the registry-history
-project. Records with uncertain classifications are retained.
+assessments**, and the publication– NCT trial identifier links used for the registry-history
+project.
 
 ## Workflow
 
@@ -28,7 +28,7 @@ project. Records with uncertain classifications are retained.
 
 Both classification steps use **gpt-5.6-sol with medium reasoning** and the
 included [prompts](prompts). Eligible reports include secondary and follow-up
-publications when they preserve the randomized comparison. The label
+publications, as long as they preserve the randomized comparison. The label
 `PRIMARY_RCT_REPORT` includes all such reports.
 
 ## Validation
@@ -50,7 +50,6 @@ python -m unittest discover -s tests
 
 The saved results can be examined without an API key. To run new classifications,
 set `OPENAI_API_KEY` in your environment and follow [Running the pipeline](RUNNING.md).
-API calls incur charges; a rerun may produce different labels.
 
 Code is released under the [MIT license](LICENSE). PubMed abstracts retain their
 existing rights; see [Data rights](DATA_RIGHTS.md).
