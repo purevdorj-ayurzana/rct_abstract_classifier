@@ -10,10 +10,7 @@ All tables join by `pmid`, the PubMed publication identifier.
 | `validation/annotations.csv` | Combined PW, AP, and LLM annotations for 50 publications |
 
 The processed input preserves titles, abstracts, DOI, journal, publication year,
-and date. `publication_date` contains PubMed's **Create Date**, as supplied in the
-study input. Publication years range from 2020 to 2026; 52 records have year 2026.
-All 7,552 records have an abstract. The exact original search query and download
-date are not recorded in the supplied source files.
+and date. All 7,552 records have an abstract.
 
 ## Results
 
