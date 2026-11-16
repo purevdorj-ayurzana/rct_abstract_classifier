@@ -23,9 +23,6 @@ and date. All 7,552 records have an abstract.
 - `nct_abstract_regex_found` and `nct_abstract_registry_numbers`: deterministic
   abstract-only NCT detection, populated only for eligible reports.
 
-The positive label includes any eligible randomized-group results comparison,
-not just the original primary-results publication. A missing NCT identifier does
-not make a publication ineligible.
 
 `results/primary_endpoint_assessments.csv` contains the 2,178 eligible publications.
 It records `POSITIVE`, `NEGATIVE`, or `UNCLEAR`, the explicitly identified primary
