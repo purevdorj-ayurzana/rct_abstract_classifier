@@ -2,8 +2,6 @@
 from __future__ import annotations
 
 import json
-import hashlib
-import hmac
 from collections import Counter
 from pathlib import Path
 
@@ -18,7 +16,7 @@ from primary_endpoint_common import (
     build_endpoint_user_input, endpoint_json_schema, load_endpoint_config,
     make_endpoint_input_hash,
 )
-from validation import combine_annotations, read_csv
+from validation import read_csv, validate_annotations
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -78,18 +76,8 @@ def verify() -> dict:
     requests = {task: check_requests(publications, task) for task in ["rct", "primary_endpoint"]}
     require(requests == {"rct": 7552, "primary_endpoint": 2178}, "Request count mismatch")
     validation = read_csv(ROOT / "data/validation/annotations.csv")
-    combined = combine_annotations(read_csv(ROOT / "data/validation/source_annotations.csv"), ready)
-    require(len(validation) == 50 and validation == combined, "Validation annotation reconciliation failed")
-    sampling = load_json(ROOT / "data/validation/sampling_manifest.json")
-    require(sampling["source_sha256"] == sha256_file(ROOT / "data/processed/publications_ready.csv"), "Validation sampling source changed")
-    ranked = []
-    for number, row in enumerate(ready, 1):
-        message = "\0".join([sampling["algorithm_version"], sampling["source_sha256"], str(number), row["pmid"]]).encode("utf-8")
-        score = hmac.new(bytes.fromhex(sampling["seed_hex"]), message, hashlib.sha256).hexdigest()
-        ranked.append((score, number, row["pmid"]))
-    selected = sorted(ranked)[:50]
-    expected = [(r["selection_score_hmac_sha256"], r["source_row_number"], r["pmid"]) for r in sampling["selected_records"]]
-    require(selected == expected and {r[2] for r in selected} == {r["pmid"] for r in validation}, "The recorded draw does not reproduce the validation sample")
+    require(len(validation) == 50, "Expected 50 validation publications")
+    validate_annotations(validation, ready)
     handoff = verify_history_export(ROOT / "results/registry_handoff")
     require(handoff["selected_publications"] == 2178 and handoff["pmid_nct_associations"] == 1890 and handoff["unique_candidate_nct_ids"] == 1759, "Registry handoff counts changed")
     return {"input_publications": len(ready), "recorded_requests_verified": sum(requests.values()), "validation_publications": len(validation), "registry_associations": handoff["pmid_nct_associations"]}

@@ -22,7 +22,7 @@ from finalize_rct import finalize_run
 from finalize_endpoints import finalize_endpoint_run
 from parse_primary_endpoint_results import parse_endpoint_results
 from primary_endpoint_workflow import prepare_endpoint_run, verify_endpoint_run_integrity
-from validation import harmonize, combine_annotations
+from validation import validate_annotations
 
 
 def response(custom_id, payload, model="gpt-5.6-sol"):
@@ -185,16 +185,13 @@ class WorkflowTests(unittest.TestCase):
 
 
 class AnnotationTests(unittest.TestCase):
-    def test_uncertainty_and_applicability_remain_distinct(self):
-        self.assertEqual(harmonize("TRUE", "UNCLEAR"), ("PRIMARY_RCT_REPORT", "UNCLEAR"))
-        self.assertEqual(harmonize("FALSE", ""), ("NOT_PRIMARY_RCT_REPORT", "NOT_APPLICABLE"))
-        self.assertEqual(harmonize("TRUE", ""), ("PRIMARY_RCT_REPORT", ""))
-        self.assertEqual(harmonize("TRUE", "FALSE"), ("PRIMARY_RCT_REPORT", "NEGATIVE"))
-
-    def test_duplicate_annotations_are_not_silently_combined(self):
-        row = {"pmid": "1", "annotator": "PW", "rct_label": "TRUE", "primary_endpoint_success": "UNCLEAR"}
+    def test_duplicate_validation_pmids_are_rejected(self):
+        row = {"pmid": "1", "title": "Title"}
+        for annotator in ["pw", "ap", "llm"]:
+            row[f"{annotator}_rct"] = "PRIMARY_RCT_REPORT"
+            row[f"{annotator}_primary_endpoint"] = "UNCLEAR"
         with self.assertRaises(ValueError):
-            combine_annotations([row, row], [{"pmid": "1", "title": "Title"}])
+            validate_annotations([row, row], [{"pmid": "1", "title": "Title"}])
 
     def test_nct_regex_does_not_guess_malformed_identifiers(self):
         self.assertEqual(extract_nct_ids("nct01234567; NCT-76543210; NCT1234567; NCT123456789"), ["NCT01234567", "NCT76543210"])

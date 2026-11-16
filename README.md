@@ -36,7 +36,7 @@ publications when they preserve the randomized comparison. The label
 
 PW and AP annotated a random sample of **50 publications** for RCT classification
 and primary-endpoint success. Their annotations and the LLM results are available
-as [CSV](data/validation/annotations.csv) and [Excel](data/validation/annotations.xlsx).
+in the [validation table](data/validation/annotations.csv).
 Individual disagreements are preserved.
 
 ## Use

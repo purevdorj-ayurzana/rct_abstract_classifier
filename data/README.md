@@ -8,10 +8,6 @@ All tables join by `pmid`, the PubMed publication identifier.
 | `raw/pubmed_abstracts.txt` | Original PubMed abstract-text download |
 | `processed/publications_ready.csv` | The 7,552 records supplied to the classifier |
 | `validation/annotations.csv` | Combined PW, AP, and LLM annotations for 50 publications |
-| `validation/annotations.xlsx` | The same annotations in a readable workbook |
-| `validation/source_annotations.csv` | Original annotation labels, one row per publication and annotator |
-| `validation/source_manifest.json` | Annotation-source details and checksums |
-| `validation/sampling_manifest.json` | Recorded random-sample method, seed, and selected PMIDs |
 
 The processed input preserves titles, abstracts, DOI, journal, publication year,
 and date. `publication_date` contains PubMed's **Create Date**, as supplied in the
@@ -51,12 +47,9 @@ Candidate identifiers are not proof of trial eligibility or registry availabilit
 
 ## Validation labels
 
-The combined CSV uses the RCT labels defined above and primary-endpoint labels
-`POSITIVE`, `NEGATIVE`, `UNCLEAR`, and `NOT_APPLICABLE`. The workbook displays
-RCT eligibility as Yes/No/Unclear and endpoint labels in plain language.
-
-PW's original RCT labels are retained directly. AP and LLM `TRUE`/`FALSE` map to
-eligible/excluded RCT reports. For endpoint success, `TRUE`/`FALSE` map to
-`POSITIVE`/`NEGATIVE`; `UNCLEAR` is unchanged. Source `NA`, and blank LLM endpoints
-for excluded records, map to `NOT_APPLICABLE`. Other missing labels remain blank.
-Original values are preserved in the source table. No consensus label is added.
+The validation table contains separate PW, AP, and LLM columns for RCT
+classification and primary-endpoint success. It uses the RCT labels defined
+above and endpoint labels `POSITIVE`, `NEGATIVE`, `UNCLEAR`, and
+`NOT_APPLICABLE`. `NOT_APPLICABLE` indicates an excluded publication; `UNCLEAR`
+indicates insufficient information to decide. Missing labels remain blank.
+Individual disagreements are preserved without a consensus label.
