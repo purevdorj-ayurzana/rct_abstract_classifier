@@ -1,0 +1,25 @@
+{
+  "publications": 50,
+  "join_key": "pmid",
+  "source_files": {
+    "PW": {
+      "filename": "Version_PW_RCT_Corpus_Random_Sample_50_Human_Annotation.xlsx",
+      "sha256": "bad15b7dab046eba0a6dec9b673a5ff385c8ce7529b3861857d6d283dced3bbf",
+      "sheet": "Human Annotation",
+      "range": "A1:I51"
+    },
+    "AP": {
+      "filename": "Version_AP_RCT_Corpus_Random_Sample_50_Human_Annotation.xlsx",
+      "sha256": "982a69e8982c2a34c1d999d07d99551572cfbdda4acd27c4caf2e4040712a592",
+      "sheet": "Human Annotation",
+      "range": "A1:I51"
+    },
+    "LLM": {
+      "filename": "Sol_Results_RCT_Corpus_Random_Sample_50.xlsx",
+      "sha256": "b262d808eeeebda671ec161487938bf6c39851cf9b8ec136e887203ac5d00f5b",
+      "sheet": "Sol Results",
+      "range": "A1:I51"
+    }
+  },
+  "sampling_manifest_sha256": "6a9ec43fe73d99f3f5b17ba1de04b91acd1b804ad47ac2fd6b8198429abc7dff"
+}

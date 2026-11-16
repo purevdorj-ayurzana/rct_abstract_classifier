@@ -1,0 +1,83 @@
+{
+  "rct_run_id": "20260804T093334Z_2cd8b29c",
+  "primary_endpoint_run_id": "20260804T150126Z_5c2922c7",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "chunk_size": 500,
+  "max_technical_retries": 2,
+  "responses_request_fields": [
+    "model",
+    "reasoning.effort",
+    "input",
+    "text.format"
+  ],
+  "rct_counts": {
+    "NOT_PRIMARY_RCT_REPORT": 5352,
+    "PRIMARY_RCT_REPORT": 2178,
+    "UNCLEAR": 22
+  },
+  "primary_endpoint_counts": {
+    "NEGATIVE": 657,
+    "POSITIVE": 1239,
+    "UNCLEAR": 282
+  },
+  "source_artifact_sha256": {
+    "rct_run_manifest": "c7455658e381334d4055bfdbce4370613915c3623cf8da4a79cdfbff90e66649",
+    "rct_final": "3fd98b89f4a658213b321fe81e119de1431d24a085e835bf46d1687d6cd7465c",
+    "endpoint_run_manifest": "db69b2d0fdfc43d9b0669675a4228305cea58ddb72f3e59ae57da77d6c804c6d",
+    "endpoint_final": "34f3f9aa6501ca62505746a1464716569728fe15b035a63026b16e03ef413f7c"
+  },
+  "rct_qa": {
+    "generated_at_utc": "2026-08-04T14:56:53.897353+00:00",
+    "integrity_passed": true,
+    "arm": "sol",
+    "final_rows": 7552,
+    "unique_pmids": 7552,
+    "label_counts": {
+      "NOT_PRIMARY_RCT_REPORT": 5352,
+      "PRIMARY_RCT_REPORT": 2178,
+      "UNCLEAR": 22
+    },
+    "unresolved_technical_failures": 0,
+    "primary_rct_reports": 2178,
+    "nct_abstract_regex_found": 1805,
+    "nct_abstract_regex_found_percentage": 82.87,
+    "usage_all_attempts": {
+      "attempt_rows": 7552,
+      "input_tokens": 11458273,
+      "cache_write_tokens": 3906875,
+      "cached_tokens": 7510568,
+      "output_tokens": 718709,
+      "reasoning_tokens": 28908,
+      "total_tokens": 12176982
+    }
+  },
+  "primary_endpoint_qa": {
+    "generated_at_utc": "2026-08-04T18:13:39.927645+00:00",
+    "integrity_passed": true,
+    "arm": "sol",
+    "final_rows": 2178,
+    "unique_pmids": 2178,
+    "label_counts": {
+      "NEGATIVE": 657,
+      "POSITIVE": 1239,
+      "UNCLEAR": 282
+    },
+    "unclear_reason_counts": {
+      "MULTIPLE_PRIMARY_ENDPOINTS_AMBIGUOUS": 112,
+      "PRIMARY_ENDPOINT_NOT_EXPLICIT": 86,
+      "PRIMARY_ENDPOINT_RESULT_NOT_REPORTED": 15,
+      "SUCCESS_RULE_NOT_DETERMINABLE": 69
+    },
+    "unresolved_technical_failures": 0,
+    "usage_all_attempts": {
+      "attempt_rows": 2178,
+      "input_tokens": 4082662,
+      "cache_write_tokens": 1668143,
+      "cached_tokens": 2347727,
+      "output_tokens": 376038,
+      "reasoning_tokens": 92757,
+      "total_tokens": 4458700
+    }
+  }
+}

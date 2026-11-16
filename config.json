@@ -1,0 +1,16 @@
+{
+  "project_name": "rct_abstract_classifier",
+  "classification_target": "publication reporting results that directly compare randomized groups in a prospective human randomized clinical trial",
+  "workflow_mode": "single_model_arm",
+  "classification_prompt": "prompts/rct_classification.txt",
+  "model_arms": {
+    "sol": {
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "chunk_size": 500
+    }
+  },
+  "max_technical_retries": 2,
+  "input_csv": "data/processed/publications_ready.csv",
+  "output_root": "outputs/rct"
+}

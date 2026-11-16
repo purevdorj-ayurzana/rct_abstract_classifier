@@ -1,0 +1,323 @@
+{
+  "manifest_version": 1,
+  "created_at_utc": "2026-08-06T12:39:14.886607+00:00",
+  "algorithm_version": "hmac-sha256-record-ranking-v1",
+  "algorithm_description": "For each record, compute HMAC-SHA-256 using the 256-bit seed as the key and a canonical message containing the algorithm version, source file SHA-256, one-based source data-row number, and PMID. Sort scores lexicographically and select the lowest scores. This is a deterministic simple random sample without replacement when the seed is generated uniformly at random.",
+  "seed_hex": "3afd2d8f22a184104b3d6935beae91e626f8d3aee94df3535468ca672774acfc",
+  "seed_source": "os_csprng_256_bits",
+  "source_sha256": "94c1869595d331162ed3166dfffcd076c9154d908387d876a3a6c34745a268be",
+  "source_columns": [
+    "pmid",
+    "title",
+    "abstract",
+    "doi",
+    "journal",
+    "publication_year",
+    "publication_date"
+  ],
+  "population_size": 7552,
+  "sample_size": 50,
+  "selected_records": [
+    {
+      "sample_rank": 1,
+      "pmid": "35076666",
+      "source_row_number": 1742,
+      "selection_score_hmac_sha256": "0006910cb9b44aa402200ff80de0595adb61435e53288c8af438ff6b60c083fd"
+    },
+    {
+      "sample_rank": 2,
+      "pmid": "35793817",
+      "source_row_number": 5803,
+      "selection_score_hmac_sha256": "000e1a9ed9e8f56c0f124c1bf80e193be1b48019271efa2f65e003c8c1767f3d"
+    },
+    {
+      "sample_rank": 3,
+      "pmid": "38346442",
+      "source_row_number": 6922,
+      "selection_score_hmac_sha256": "0015ec3f877548a81b6d1426e190f58b85f4ea7f58ba61ba4c798fc611871178"
+    },
+    {
+      "sample_rank": 4,
+      "pmid": "39406449",
+      "source_row_number": 5664,
+      "selection_score_hmac_sha256": "001b11344133a4490aaf4e61db2e3acb0517b742a3c9a811050dfafabaa8c5aa"
+    },
+    {
+      "sample_rank": 5,
+      "pmid": "34774198",
+      "source_row_number": 7421,
+      "selection_score_hmac_sha256": "0033b59e8a4896d19fb6901952e23018c0a6fc4f930b264ab961b3f355b21298"
+    },
+    {
+      "sample_rank": 6,
+      "pmid": "34227975",
+      "source_row_number": 6695,
+      "selection_score_hmac_sha256": "0035b4c4637a293ffb2e3b073e4e83b4af9aeb0df06953c5f044f6fff4ba2670"
+    },
+    {
+      "sample_rank": 7,
+      "pmid": "38488784",
+      "source_row_number": 1437,
+      "selection_score_hmac_sha256": "004d3b58d3eb89636898e49898b720a409111ab77c05c2cea41c5919ad3774f2"
+    },
+    {
+      "sample_rank": 8,
+      "pmid": "39820296",
+      "source_row_number": 1246,
+      "selection_score_hmac_sha256": "0054a93ae1889a6d51e473b7e25bcb12da9155cff2fc1e1de00a5ebaa9f76afd"
+    },
+    {
+      "sample_rank": 9,
+      "pmid": "40367373",
+      "source_row_number": 3639,
+      "selection_score_hmac_sha256": "00569b3cd58c67f0843dc0fdb493705c1df8b80f1417203d27edf47ec5255685"
+    },
+    {
+      "sample_rank": 10,
+      "pmid": "39665649",
+      "source_row_number": 3979,
+      "selection_score_hmac_sha256": "005c351ca57ba989624577235357e1315883d3eef90306976c2dc52e99e63adc"
+    },
+    {
+      "sample_rank": 11,
+      "pmid": "33568349",
+      "source_row_number": 5901,
+      "selection_score_hmac_sha256": "005cdb7629195549a2ed8d0550d80017efb8dfee3eadf285bfc764153f746871"
+    },
+    {
+      "sample_rank": 12,
+      "pmid": "33626252",
+      "source_row_number": 3869,
+      "selection_score_hmac_sha256": "005d3be5eb8c64c1277c1c90d09ab0bca13d9510af089d9c18381b0822fc8a54"
+    },
+    {
+      "sample_rank": 13,
+      "pmid": "33049222",
+      "source_row_number": 7510,
+      "selection_score_hmac_sha256": "00717b99c7a4dc17af33c4bec05025447b06a0a61cbdc58d047ec3db5eaae2fa"
+    },
+    {
+      "sample_rank": 14,
+      "pmid": "37862007",
+      "source_row_number": 1503,
+      "selection_score_hmac_sha256": "00a4d57f299a2a78c119f9393b7b3669b99c998e4ee7bf11ee51862868ce05e0"
+    },
+    {
+      "sample_rank": 15,
+      "pmid": "36942789",
+      "source_row_number": 3744,
+      "selection_score_hmac_sha256": "00a6358d6cdde7c8fae859316ce99bedc9ef6d89bae6c3185e5526ef8dd261aa"
+    },
+    {
+      "sample_rank": 16,
+      "pmid": "34724027",
+      "source_row_number": 2472,
+      "selection_score_hmac_sha256": "00ab3bc6fbeaa2da5e2b56934e2cd04470b9fb001daf984c94ac413037a61190"
+    },
+    {
+      "sample_rank": 17,
+      "pmid": "33475701",
+      "source_row_number": 3151,
+      "selection_score_hmac_sha256": "00af4e5ccc1a4eadb73127ab08594ce5382382b859a55f9e2380742c82ec05e8"
+    },
+    {
+      "sample_rank": 18,
+      "pmid": "41016406",
+      "source_row_number": 5999,
+      "selection_score_hmac_sha256": "00b27c8a63c011381376c0e1421337440464bc015469578648a60d0c639808a8"
+    },
+    {
+      "sample_rank": 19,
+      "pmid": "40884493",
+      "source_row_number": 129,
+      "selection_score_hmac_sha256": "00b5c23a6ad05e9d14dafc494b37b9566210223becf67517e11adc0e25c84369"
+    },
+    {
+      "sample_rank": 20,
+      "pmid": "36961127",
+      "source_row_number": 3742,
+      "selection_score_hmac_sha256": "00b9476e88aa53273c18d8a4f6798aebea40afbaf68d46387ee485c0c856112a"
+    },
+    {
+      "sample_rank": 21,
+      "pmid": "38739079",
+      "source_row_number": 4021,
+      "selection_score_hmac_sha256": "00bd3b0280b8ba535da7223f13ff67b2d95434cab9851b375174d080966d8e99"
+    },
+    {
+      "sample_rank": 22,
+      "pmid": "38809527",
+      "source_row_number": 2080,
+      "selection_score_hmac_sha256": "00c6e767767624b7a22f698d0ac67c861f7bfed888d3c64e1a314f16e43ed506"
+    },
+    {
+      "sample_rank": 23,
+      "pmid": "32087126",
+      "source_row_number": 7166,
+      "selection_score_hmac_sha256": "00cbf4be2396c87af3443384dcb9578c0e6efe696e5717e5e4c011ee2e0e7529"
+    },
+    {
+      "sample_rank": 24,
+      "pmid": "33453783",
+      "source_row_number": 7492,
+      "selection_score_hmac_sha256": "00d0990e57462eb616a6565d2e9358ed80399480bea9f7db0bee698ab3e18489"
+    },
+    {
+      "sample_rank": 25,
+      "pmid": "34495304",
+      "source_row_number": 3111,
+      "selection_score_hmac_sha256": "00d4126afcf2d4c2840ff24acaac6e5e294d0b6bf3fb768929802132e8aafaae"
+    },
+    {
+      "sample_rank": 26,
+      "pmid": "32611558",
+      "source_row_number": 5947,
+      "selection_score_hmac_sha256": "00d44b760c7ba8adaa453738d91d00306915de2a154999b630dba6ff5913f207"
+    },
+    {
+      "sample_rank": 27,
+      "pmid": "37076174",
+      "source_row_number": 5757,
+      "selection_score_hmac_sha256": "00d71507c11910d4d5b5d27932890919f5a731c43542a8dd26691e867eb62549"
+    },
+    {
+      "sample_rank": 28,
+      "pmid": "35303473",
+      "source_row_number": 7405,
+      "selection_score_hmac_sha256": "00eea41c334f5ed89ae7485e76557753e2b038601c8b78b9c78e445a9ff6fab3"
+    },
+    {
+      "sample_rank": 29,
+      "pmid": "38206604",
+      "source_row_number": 731,
+      "selection_score_hmac_sha256": "00ef7404173b4f4fdcb1d3f7943795959c8085650359907d81ff588d5c44a63f"
+    },
+    {
+      "sample_rank": 30,
+      "pmid": "32679112",
+      "source_row_number": 6762,
+      "selection_score_hmac_sha256": "00f1d8c184a61e887cd8771fc269e59db2d8528f8122b9742ad8edab48fa6542"
+    },
+    {
+      "sample_rank": 31,
+      "pmid": "36219403",
+      "source_row_number": 3021,
+      "selection_score_hmac_sha256": "00f925f9d3ca58b8f58356b4278e243664e3b94482337064c5008f0c1ac7b54a"
+    },
+    {
+      "sample_rank": 32,
+      "pmid": "34473201",
+      "source_row_number": 3112,
+      "selection_score_hmac_sha256": "010101ffb7d9746c6056b0fb70bc8dac06c034d8ae4717a05a0b10e6789899e9"
+    },
+    {
+      "sample_rank": 33,
+      "pmid": "33875446",
+      "source_row_number": 4850,
+      "selection_score_hmac_sha256": "011129f788bfc9ef8fae76309e17952888e65552df900ca75209427426fb6354"
+    },
+    {
+      "sample_rank": 34,
+      "pmid": "36630109",
+      "source_row_number": 2984,
+      "selection_score_hmac_sha256": "0138ba2e58107cf2c296d6d88ea757c814613e05fbe9b4c12beed8dacfd3d850"
+    },
+    {
+      "sample_rank": 35,
+      "pmid": "35139273",
+      "source_row_number": 3807,
+      "selection_score_hmac_sha256": "013fb93ea0e3764a88ce73c56ca49ab7e0b9d62eff3dec82205707f82dc3e410"
+    },
+    {
+      "sample_rank": 36,
+      "pmid": "36261162",
+      "source_row_number": 5398,
+      "selection_score_hmac_sha256": "01543314f1c7a2fd7552a0dc734bfe1bb7fb822675511b91a0f81a3a6909950b"
+    },
+    {
+      "sample_rank": 37,
+      "pmid": "41130619",
+      "source_row_number": 4931,
+      "selection_score_hmac_sha256": "0157236148daf97a743c48ae7a47a3ab59671475d9894b4c257059051643966b"
+    },
+    {
+      "sample_rank": 38,
+      "pmid": "35476650",
+      "source_row_number": 3793,
+      "selection_score_hmac_sha256": "015e2aefe7f97bbfa3a766519e2193a69a26e966e5649f9b6ac0530b762c9b3e"
+    },
+    {
+      "sample_rank": 39,
+      "pmid": "38278171",
+      "source_row_number": 6100,
+      "selection_score_hmac_sha256": "0162be2fa16cf2d0b5dfc6d9454f979b1b1ad19012a0037abd75af06d64d71a8"
+    },
+    {
+      "sample_rank": 40,
+      "pmid": "39282897",
+      "source_row_number": 3995,
+      "selection_score_hmac_sha256": "016f8148dc3eac759bcb664865a3f2de55d660e9a3ffd81a30fc0884f69d727d"
+    },
+    {
+      "sample_rank": 41,
+      "pmid": "38483396",
+      "source_row_number": 702,
+      "selection_score_hmac_sha256": "017050983f55745fea428efbb3b2d125416d647c08483a882c020b9c7cb030e1"
+    },
+    {
+      "sample_rank": 42,
+      "pmid": "34587385",
+      "source_row_number": 3483,
+      "selection_score_hmac_sha256": "0181009b6dd76a2f27777a96af09901fd0d29f18d6def94c00b094025157a1a6"
+    },
+    {
+      "sample_rank": 43,
+      "pmid": "39745731",
+      "source_row_number": 1963,
+      "selection_score_hmac_sha256": "019377ca28ff4ea8a8c0541cbeedd2e3192d25755be3114da709481bf7816f80"
+    },
+    {
+      "sample_rank": 44,
+      "pmid": "33731340",
+      "source_row_number": 4854,
+      "selection_score_hmac_sha256": "0193c13c8235e70b4095ef174e26aa65446da2f6f76377e114112f36e0582d25"
+    },
+    {
+      "sample_rank": 45,
+      "pmid": "34587383",
+      "source_row_number": 4135,
+      "selection_score_hmac_sha256": "019c971ac2193d3e89743879ac9462a21bd58b862e7e909ccc63ea8990dfd360"
+    },
+    {
+      "sample_rank": 46,
+      "pmid": "41130611",
+      "source_row_number": 4590,
+      "selection_score_hmac_sha256": "01ac6993a87839f4a46c43e7fb045969bd0f6c6a5072818414ee55d574a9f49a"
+    },
+    {
+      "sample_rank": 47,
+      "pmid": "37200007",
+      "source_row_number": 1572,
+      "selection_score_hmac_sha256": "01c94250e66ad55e5556e6e0f7303adf907ba8ad0c159a17c22a6823ca4972ee"
+    },
+    {
+      "sample_rank": 48,
+      "pmid": "37311585",
+      "source_row_number": 4715,
+      "selection_score_hmac_sha256": "01d6f03d55fad9cb550fed2690de0bd26d72e93d5580c0079cfedd896ee531e3"
+    },
+    {
+      "sample_rank": 49,
+      "pmid": "39297712",
+      "source_row_number": 598,
+      "selection_score_hmac_sha256": "01e9d3a35fb3c972c3b7bf67cf76188a75d4709190fb3f494d3931c0ba24ff14"
+    },
+    {
+      "sample_rank": 50,
+      "pmid": "35367007",
+      "source_row_number": 6232,
+      "selection_score_hmac_sha256": "01efde2df56df702120de31446bed780192ef10c08e3b30babb738955315fee9"
+    }
+  ],
+  "source_path": "data/processed/publications_ready.csv"
+}

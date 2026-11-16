@@ -1,0 +1,131 @@
+{
+  "export_format_version": 3,
+  "export_type": "clinicaltrials_gov_history_cohort",
+  "created_at_utc": "2026-08-06T13:30:38.380982+00:00",
+  "api_requests_made": false,
+  "source_project": "rct_abstract_classifier",
+  "classifier_run_id": "20260804T093334Z_2cd8b29c",
+  "classifier_workflow_mode": "single_model_arm",
+  "classifier_arm": "sol",
+  "classifier_model": "gpt-5.6-sol",
+  "classifier_reasoning_effort": "medium",
+  "selection_rule": "sol.final_label == PRIMARY_RCT_REPORT",
+  "source_rows": 7552,
+  "selected_publications": 2178,
+  "selected_publications_with_nct": 1807,
+  "selected_publications_without_nct": 371,
+  "pmid_nct_associations": 1890,
+  "unique_candidate_nct_ids": 1759,
+  "selected_pmid_hash": "e7a864d5874088be79ca9d31c7bbf2a357200f384615c87e00b4354520861ab6",
+  "association_hash": "1316d29dbeb4d1337aa2f6ff65cfdf2ca07d2cbbb0dbdfb13f066c4828f71e42",
+  "unique_nct_id_hash": "d80da161daa879710d0e458afbf39651a58dc7844ac769e43bcac92a193564de",
+  "source_artifacts": {
+    "run_manifest": {
+      "sha256": "c7455658e381334d4055bfdbce4370613915c3623cf8da4a79cdfbff90e66649"
+    },
+    "source_snapshot": {
+      "sha256": "44f2f22127a0699f93b3cda4d50b41c239e50a94d3866c661f209e0333252c41"
+    },
+    "config_snapshot": {
+      "sha256": "851015b1376aa8aea05e9e3c96915a7b6c7ffe22d8a87164845ba4c207fa07b6"
+    },
+    "schema_snapshot": {
+      "sha256": "e50aab47c476ddafa46d7a57ea4bcd7b033137c0e5b2fab99b237f835d827513"
+    },
+    "prompt_snapshot": {
+      "sha256": "6899ab7094ee613a2efbc3b14a47bf304bbb0000acef71ef04233a123858b0e0"
+    },
+    "classifier_final": {
+      "sha256": "3fd98b89f4a658213b321fe81e119de1431d24a085e835bf46d1687d6cd7465c"
+    },
+    "classifier_qa": {
+      "sha256": "ad7e7f499f85497381b40c8f405c7644f22f558a3114e4da5c0be11f7957da19"
+    }
+  },
+  "files": {
+    "selected_publications.csv": {
+      "sha256": "8df4c2972ea1d6d02235efbad9fc8511f30504b52abf7c53c94d3412a2f9414f",
+      "rows": 2178,
+      "columns": [
+        "source_row_number",
+        "pmid",
+        "title",
+        "abstract",
+        "doi",
+        "journal",
+        "publication_year",
+        "publication_date",
+        "publication_types",
+        "classifier_run_id",
+        "classifier_arm",
+        "classifier_model",
+        "classifier_reasoning_effort",
+        "classifier_label",
+        "underlying_trial_randomized",
+        "publication_role",
+        "trial_name_or_acronym",
+        "registration_ids",
+        "brief_rationale",
+        "nct_abstract_regex_found",
+        "nct_abstract_registry_numbers",
+        "classifier_prompt_hash",
+        "classifier_schema_hash",
+        "classifier_input_hash",
+        "classifier_request_hash",
+        "classifier_response_id"
+      ]
+    },
+    "nct_candidates.csv": {
+      "sha256": "6653055091e70f280869f505138b2425698a3b878778f1611e58a27be55ee244",
+      "rows": 1890,
+      "columns": [
+        "pmid",
+        "nct_id_raw",
+        "nct_id_normalized",
+        "classifier_run_id",
+        "classifier_arm",
+        "classifier_label",
+        "nct_extraction_method",
+        "nct_source_field"
+      ]
+    },
+    "nct_candidate_corrections.csv": {
+      "sha256": "e03b6deb8eddfe0f0e4537db9fa0ba1ad2ee128dcb1520c39c702c2111d05f25",
+      "rows": 2,
+      "columns": [
+        "pmid",
+        "nct_id_source_text",
+        "nct_id_normalized",
+        "nct_source_field",
+        "correction_type",
+        "correction_reason",
+        "publication_evidence_url",
+        "registry_evidence_url",
+        "verified_date"
+      ]
+    }
+  },
+  "limitations": [
+    "Regex-derived NCT associations remain exactly reproducible from the supplied abstracts.",
+    "Additional associations are limited to the hashed, source-cited manual correction ledger.",
+    "This augmentation command made no OpenAI or ClinicalTrials.gov requests.",
+    "Absence of an accepted NCT candidate does not establish that a trial was unregistered.",
+    "Human agreement was assessed on a separate 50-publication sample."
+  ],
+  "export_id": "20260804T093334Z_2cd8b29c_curated_8ef22ff0",
+  "candidate_selection_rule": "abstract_regex OR manual_verified_correction",
+  "selected_publications_with_abstract_regex_nct": 1805,
+  "selected_publications_with_manual_verified_correction": 2,
+  "manual_verified_corrections": 2,
+  "correction_set_hash": "8ef22ff0cf3ad2f506b2d09653166670499a7fa80357897ee8a7a3703313a4ac",
+  "base_export": {
+    "export_format_version": 2,
+    "classifier_run_id": "20260804T093334Z_2cd8b29c",
+    "manifest_sha256": "09eb7406840ce81b9db99585aadacb9ef05df4e93ba066deedafd3d1946ceaa1",
+    "selected_publications_sha256": "8df4c2972ea1d6d02235efbad9fc8511f30504b52abf7c53c94d3412a2f9414f",
+    "nct_candidates_sha256": "84602a7b218c1e1dd939ba5d286542c42824ea0d59acfe8e6236b28771154eee",
+    "association_hash": "e9b33e39069e103a1c3df3daba59e8f3c4f89d6e5c87c35edbfbf64eedc11d7a",
+    "unique_nct_id_hash": "8c659887106798ca4711cb93062de201428328d98946fdf824b9849edef9cfd6"
+  },
+  "release_source_manifest_sha256": "d98f1fc67ae34e52253558df2bcf318622d24b9354b53f831f45eab81d7d507c"
+}

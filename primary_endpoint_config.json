@@ -1,0 +1,19 @@
+{
+  "project_name": "rct_primary_endpoint_classifier",
+  "workflow_mode": "primary_endpoint_single_model_arm",
+  "classification_target": "whether the explicitly identified prespecified primary endpoint met the randomized trial's stated success criterion",
+  "classification_prompt": "prompts/primary_endpoint.txt",
+  "source_selector": {
+    "upstream_arm": "sol",
+    "upstream_label": "PRIMARY_RCT_REPORT"
+  },
+  "model_arms": {
+    "sol": {
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "chunk_size": 500
+    }
+  },
+  "max_technical_retries": 2,
+  "output_root": "outputs/primary_endpoint"
+}

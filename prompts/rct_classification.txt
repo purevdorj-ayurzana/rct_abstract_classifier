@@ -1,0 +1,83 @@
+You are independently screening a biomedical journal publication to determine
+whether it reports results from a randomized clinical trial while preserving a
+comparison between randomized groups.
+
+GOAL
+The positive class is any publication that reports results from a prospective
+randomized clinical trial in humans and directly compares outcomes between the
+groups created by random allocation.
+
+The publication does not have to be the first or principal report of the trial.
+Eligible publications include primary results, later follow-up results, and
+secondary analyses when they retain the randomized between-group comparison.
+
+FINAL LABELS
+- PRIMARY_RCT_REPORT
+- NOT_PRIMARY_RCT_REPORT
+- UNCLEAR
+
+For compatibility with the existing project, PRIMARY_RCT_REPORT is the legacy
+name of the positive label. It means an eligible comparative RCT results report,
+not only the original primary-results publication.
+
+RANDOMIZED TRIAL
+The study must prospectively allocate human participants, clusters, centres, or
+treatment sequences by a genuinely random mechanism to at least two intervention
+or comparator groups.
+
+Do not treat random sampling, Mendelian randomization, random laboratory order,
+simulation, alternation, birth date, record number, or another predictable
+allocation rule as randomized treatment allocation.
+
+POSITIVE RULE
+Classify PRIMARY_RCT_REPORT when the supplied title or abstract:
+1. establishes or very strongly indicates genuine randomized allocation;
+2. reports results for an outcome or endpoint; and
+3. directly compares the groups created by random allocation.
+
+The endpoint, topic, analysis label, and follow-up time do not determine
+eligibility. Include primary outcomes, secondary outcomes, later follow-up,
+subgroup or post-hoc analyses, quality of life, safety, economics, biomarkers,
+imaging, and translational outcomes when the randomized groups are directly
+compared.
+
+The randomized comparison is decisive. A publication arising from an RCT is not
+positive merely because it uses trial participants, samples, or data, or mentions
+that the parent trial was randomized.
+
+NEGATIVE RULE
+Classify NOT_PRIMARY_RCT_REPORT when:
+- the study is nonrandomized, observational, retrospective, single-arm, or not a
+  human clinical trial;
+- it is a protocol or design paper without trial results, review or
+  meta-analysis, editorial, correction, erratum, or letter without trial
+  results; or
+- it uses data or samples from an RCT but pools the randomized groups, analyzes
+  only one arm, studies prognosis or association without an arm-level
+  comparison, or otherwise abandons the randomized comparison.
+
+Classify UNCLEAR only when the supplied title, abstract, and metadata genuinely
+do not permit a defensible conclusion about genuine randomization or the
+presence of a randomized between-group results comparison.
+
+PUBLICATION ROLE
+Return one of:
+- PRIMARY_RESULTS
+- SECONDARY_OR_FOLLOWUP
+- PROTOCOL_OR_DESIGN
+- REVIEW_OR_META_ANALYSIS
+- NONRANDOMIZED_OR_OTHER
+- UNCLEAR
+
+Publication role and final eligibility are separate. A publication can have the
+role SECONDARY_OR_FOLLOWUP and be either positive or negative depending on
+whether it directly compares the randomized groups.
+
+TRIAL IDENTIFICATION
+Extract the trial name or acronym and any registry identifiers explicitly
+present in the supplied text. Use an empty string or empty list when absent. Do
+not invent identifiers.
+
+Use only the supplied title, abstract, and metadata. Do not use outside
+knowledge. Keep the rationale concise and state whether a randomized-group
+comparison is reported.

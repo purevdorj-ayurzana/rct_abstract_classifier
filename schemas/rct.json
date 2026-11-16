@@ -1,0 +1,81 @@
+{
+  "type": "json_schema",
+  "name": "rct_publication_classification",
+  "schema": {
+    "$defs": {
+      "FinalLabel": {
+        "description": "Legacy labels; PRIMARY_RCT_REPORT includes all eligible comparative RCT results reports.",
+        "enum": [
+          "PRIMARY_RCT_REPORT",
+          "NOT_PRIMARY_RCT_REPORT",
+          "UNCLEAR"
+        ],
+        "title": "FinalLabel",
+        "type": "string"
+      },
+      "PublicationRole": {
+        "enum": [
+          "PRIMARY_RESULTS",
+          "PROTOCOL_OR_DESIGN",
+          "SECONDARY_OR_FOLLOWUP",
+          "REVIEW_OR_META_ANALYSIS",
+          "NONRANDOMIZED_OR_OTHER",
+          "UNCLEAR"
+        ],
+        "title": "PublicationRole",
+        "type": "string"
+      },
+      "RandomizedStatus": {
+        "enum": [
+          "YES",
+          "NO",
+          "UNCLEAR"
+        ],
+        "title": "RandomizedStatus",
+        "type": "string"
+      }
+    },
+    "additionalProperties": false,
+    "description": "Active single-model classification contract.\n\nModel output deliberately contains no routing or escalation decision. Every\nconfigured model arm receives the complete selected PMID set independently.",
+    "properties": {
+      "final_label": {
+        "$ref": "#/$defs/FinalLabel"
+      },
+      "underlying_trial_randomized": {
+        "$ref": "#/$defs/RandomizedStatus"
+      },
+      "publication_role": {
+        "$ref": "#/$defs/PublicationRole"
+      },
+      "trial_name_or_acronym": {
+        "description": "Trial name or acronym explicitly present in the input, or empty.",
+        "title": "Trial Name Or Acronym",
+        "type": "string"
+      },
+      "registration_ids": {
+        "description": "Registry identifiers explicitly present in the input, or empty.",
+        "items": {
+          "type": "string"
+        },
+        "title": "Registration Ids",
+        "type": "array"
+      },
+      "brief_rationale": {
+        "description": "Concise classification rationale.",
+        "title": "Brief Rationale",
+        "type": "string"
+      }
+    },
+    "required": [
+      "final_label",
+      "underlying_trial_randomized",
+      "publication_role",
+      "trial_name_or_acronym",
+      "registration_ids",
+      "brief_rationale"
+    ],
+    "title": "RCTClassification",
+    "type": "object"
+  },
+  "strict": true
+}

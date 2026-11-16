@@ -1,0 +1,74 @@
+{
+  "type": "json_schema",
+  "name": "prespecified_primary_endpoint_assessment",
+  "schema": {
+    "$defs": {
+      "PrimaryEndpointResult": {
+        "enum": [
+          "POSITIVE",
+          "NEGATIVE",
+          "UNCLEAR"
+        ],
+        "title": "PrimaryEndpointResult",
+        "type": "string"
+      },
+      "TrialFramework": {
+        "enum": [
+          "SUPERIORITY",
+          "NONINFERIORITY",
+          "EQUIVALENCE",
+          "OTHER",
+          "UNCLEAR"
+        ],
+        "title": "TrialFramework",
+        "type": "string"
+      },
+      "UnclearReason": {
+        "enum": [
+          "NOT_APPLICABLE",
+          "PRIMARY_ENDPOINT_NOT_EXPLICIT",
+          "PRIMARY_ENDPOINT_RESULT_NOT_REPORTED",
+          "SUCCESS_RULE_NOT_DETERMINABLE",
+          "MULTIPLE_PRIMARY_ENDPOINTS_AMBIGUOUS",
+          "OTHER"
+        ],
+        "title": "UnclearReason",
+        "type": "string"
+      }
+    },
+    "additionalProperties": false,
+    "description": "Strict model-output contract for the downstream endpoint task.",
+    "properties": {
+      "primary_endpoint_result": {
+        "$ref": "#/$defs/PrimaryEndpointResult"
+      },
+      "primary_endpoint_description": {
+        "description": "Brief description of the endpoint explicitly identified as primary, or an empty string when it is not identifiable.",
+        "title": "Primary Endpoint Description",
+        "type": "string"
+      },
+      "trial_framework": {
+        "$ref": "#/$defs/TrialFramework"
+      },
+      "unclear_reason": {
+        "$ref": "#/$defs/UnclearReason"
+      },
+      "brief_rationale": {
+        "description": "Concise rationale limited to the explicitly identified primary endpoint.",
+        "minLength": 1,
+        "title": "Brief Rationale",
+        "type": "string"
+      }
+    },
+    "required": [
+      "primary_endpoint_result",
+      "primary_endpoint_description",
+      "trial_framework",
+      "unclear_reason",
+      "brief_rationale"
+    ],
+    "title": "PrimaryEndpointAssessment",
+    "type": "object"
+  },
+  "strict": true
+}
