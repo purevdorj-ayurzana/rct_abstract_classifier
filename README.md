@@ -4,10 +4,9 @@ Data and code associated with the manuscript **“An LLM-assisted Pipeline for
 Identifying ClinicalTrials.gov Registry Changes and Their Association with
 Primary Endpoint Positivity.”**
 
-This pipeline identifies publications reporting results that directly compare
-randomized trial groups. It then assesses whether an explicitly identified
+This pipeline identifies publications reporting randomized controlled trial results. It then assesses whether an explicitly identified
 prespecified primary endpoint was successful, using the title and abstract.
-ClinicalTrials.gov registry-history analysis is provided in the
+The subsequent stage of ClinicalTrials.gov registry-history analysis is provided in the
 [companion repository](https://github.com/p-ayurzana/clinicaltrials_registry_pipeline/tree/main).
 
 ## Data
