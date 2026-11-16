@@ -35,9 +35,8 @@ checks. `results/manifest.json` records released-file checksums.
 
 `results/registry_handoff` preserves all 2,178 eligible publications, including
 371 without an accepted NCT association. It contains 1,890 PMID–NCT associations
-covering 1,759 distinct candidate NCT identifiers. Two source-cited manual
-corrections supplement the abstract regex; the original regex flags remain unchanged.
-Candidate identifiers are not proof of trial eligibility or registry availability.
+covering 1,759 distinct candidate NCT identifiers. Two manual
+corrections supplement the abstract regex (regular expression) search.
 
 ## Validation labels
 
