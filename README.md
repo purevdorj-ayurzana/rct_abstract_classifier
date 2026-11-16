@@ -6,6 +6,7 @@ Primary Endpoint Positivity.”**
 
 This pipeline identifies publications reporting randomized controlled trial results. It then assesses whether an explicitly identified
 prespecified primary endpoint was successful, using the title and abstract.
+
 The subsequent stage of ClinicalTrials.gov registry-history analysis is provided in the
 [companion repository](https://github.com/p-ayurzana/clinicaltrials_registry_pipeline/tree/main).
 
